@@ -173,3 +173,83 @@ ax.grid(False)
 
 plt.tight_layout()
 plt.show()
+
+import matplotlib.pyplot as plt
+
+# Measurements
+measurements = [0.794, 0.794, 0.794, 0.794]
+measurement_numbers = [1, 2, 3, 4]
+
+# Average and reference density
+average = sum(measurements) / len(measurements)
+
+# Create the figure
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Bar graph
+bars = ax.bar(
+    measurement_numbers,
+    measurements,
+    width=0.62,
+    color="#3B73C5",
+    label="Measurements (g/mL)"
+)
+
+# Average line
+ax.axhline(
+    average,
+    color="green",
+    linestyle=":",
+    linewidth=2.5,
+    label=f"Average: {average:.3f} g/mL"
+
+)
+
+# Add measurement values above each bar
+for bar, value in zip(bars, measurements):
+    ax.text(
+        bar.get_x() + bar.get_width() / 2,
+        value + 0.005,
+        f"{value:.3f}" if value != 1.00 else "1.00",
+        ha="center",
+        va="bottom",
+        fontsize=14
+    )
+
+# Labels and title
+ax.set_title(
+    "Density of a penny",
+    fontsize=22,
+    fontweight="bold",
+    pad=20
+)
+
+ax.set_xlabel("Measurement Number", fontsize=16, labelpad=12)
+ax.set_ylabel("Density (g/cm³)", fontsize=16, labelpad=12)
+
+# Y-axis settings
+ax.set_ylim(0.70, 0.82)
+ax.set_yticks([0.70, 0.72, 0.74, 0.76, 0.78, 0.80, 0.82])
+
+# X-axis settings
+ax.set_xticks(measurement_numbers)
+ax.set_xticklabels(["1", "2", "3", "4"])
+
+# Tick styling
+ax.tick_params(axis="both", labelsize=13)
+
+# Legend
+ax.legend(
+    loc="upper right",
+    fontsize=13,
+    frameon=True,
+    edgecolor="gray"
+)
+
+# Clean up the graph
+ax.spines["top"].set_visible(False)
+ax.spines["right"].set_visible(False)
+ax.grid(False)
+
+plt.tight_layout()
+plt.show()

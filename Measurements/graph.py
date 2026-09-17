@@ -7,7 +7,7 @@ measurement_numbers = [1, 2, 3, 4, 5]
 
 # Average and reference density
 average = sum(measurements) / len(measurements)
-reference_density = 1.00
+reference_density = 0.997
 
 # Create the figure
 fig, ax = plt.subplots(figsize=(12, 8))
@@ -35,7 +35,7 @@ ax.axhline(
     color="red",
     linestyle="--",
     linewidth=2,
-    label="Reference density: 1.00 g/mL"
+    label="Reference density: 0.997 g/mL"
 )
 
 # Add measurement values above each bar
@@ -94,7 +94,7 @@ measurement_numbers = [1, 2, 3, 4, 5]
 
 # Average and reference density
 average = sum(measurements) / len(measurements)
-reference_density = 1.00
+reference_density = 0.997
 
 # Create the figure
 fig, ax = plt.subplots(figsize=(12, 8))
@@ -122,7 +122,7 @@ ax.axhline(
     color="red",
     linestyle="--",
     linewidth=2,
-    label="Reference density: 1.00 g/mL"
+    label="Reference density: 0.997 g/mL"
 )
 
 # Add measurement values above each bar
@@ -138,7 +138,7 @@ for bar, value in zip(bars, measurements):
 
 # Labels and title
 ax.set_title(
-    "Density of water at 23°C by a volumetric pipette",
+    "Density of water at 23°C with a volumetric pipette",
     fontsize=22,
     fontweight="bold",
     pad=20

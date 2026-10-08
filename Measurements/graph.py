@@ -237,7 +237,7 @@ ax.axhline(
     color="green",
     linestyle=":",
     linewidth=2.5,
-    label="Average: 0.993 g/mL"
+    label="Average: 0.982 g/mL"
 )
 
 # Reference density line
